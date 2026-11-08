@@ -1,0 +1,102 @@
+[
+  {
+    "id": "spray-fresh-30",
+    "name": "Room Spray Fresh",
+    "mood": "fresh",
+    "type": "spray",
+    "size": "30ml",
+    "price": 89,
+    "image": "images/fresh.jpg",
+    "description": "กลิ่นหอมสดชื่นจากซิตรัสและชาเขียว ปลุกพลังความมีชีวิตชีวา เติมความโปร่งสบายให้ทุกมุมห้อง"
+  },
+  {
+    "id": "spray-fresh-100",
+    "name": "Room Spray Fresh",
+    "mood": "fresh",
+    "type": "spray",
+    "size": "100ml",
+    "price": 199,
+    "image": "images/fresh.jpg",
+    "description": "กลิ่นหอมสดชื่นจากซิตรัสและชาเขียว ขนาดใหญ่เพื่อการใช้งานที่ยาวนาน เติมเต็มความสดชื่นได้ตลอดวัน"
+  },
+  {
+    "id": "spray-relax-30",
+    "name": "Room Spray Relax",
+    "mood": "relax",
+    "type": "spray",
+    "size": "30ml",
+    "price": 89,
+    "image": "images/relax.jpg",
+    "description": "สัมผัสความสงบผ่อนคลายด้วยลาเวนเดอร์และคาโมมายล์ ลดความเหนื่อยล้าเพื่อช่วงเวลาพักผ่อนที่แท้จริง"
+  },
+  {
+    "id": "spray-relax-100",
+    "name": "Room Spray Relax",
+    "mood": "relax",
+    "type": "spray",
+    "size": "100ml",
+    "price": 199,
+    "image": "images/relax.jpg",
+    "description": "อวลละอองความผ่อนคลายดุจสปาส่วนตัว ด้วยส่วนผสมของลาเวนเดอร์ชั้นดี ช่วยให้ค่ำคืนของคุณสงบยิ่งขึ้น"
+  },
+  {
+    "id": "spray-focus-30",
+    "name": "Room Spray Focus",
+    "mood": "focus",
+    "type": "spray",
+    "size": "30ml",
+    "price": 89,
+    "image": "images/focus.jpg",
+    "description": "โทนกลิ่นคลีนจากยูคาลิปตัสและโรสแมรี่ ช่วยปรับโฟกัส สร้างสมาธิและความคิดสร้างสรรค์ในโต๊ะทำงาน"
+  },
+  {
+    "id": "spray-focus-100",
+    "name": "Room Spray Focus",
+    "mood": "focus",
+    "type": "spray",
+    "size": "100ml",
+    "price": 199,
+    "image": "images/focus.jpg",
+    "description": "เสริมบรรยากาศการทำงานให้โล่งโปร่ง สดชื่น มีสมาธิ พร้อมรับทุกโปรเจกต์ด้วยกลิ่นหอมสกัดจากพฤกษาพรรณ"
+  },
+  {
+    "id": "spray-romance-30",
+    "name": "Room Spray Romance",
+    "mood": "romance",
+    "type": "spray",
+    "size": "30ml",
+    "price": 89,
+    "image": "images/romance.jpg",
+    "description": "เสน่ห์ความหอมหวานนุ่มลึกของกุหลาบดามัสก์และวานิลลาเบาบาง แต่งแต้มบรรยากาศให้อบอุ่น น่าหลงใหล"
+  },
+  {
+    "id": "spray-romance-100",
+    "name": "Room Spray Romance",
+    "mood": "romance",
+    "type": "spray",
+    "size": "100ml",
+    "price": 199,
+    "image": "images/romance.jpg",
+    "description": "สร้างบรรยากาศโรแมนติกอันน่าจดจำ ละมุนละไมด้วยกลิ่นกุหลาบและมัสก์อย่างประณีต"
+  },
+  {
+    "id": "candle-relax-std",
+    "name": "เทียนหอม Relax",
+    "mood": "relax",
+    "type": "candle",
+    "size": "Standard",
+    "price": 149,
+    "image": "images/relax.jpg",
+    "description": "เทียนหอมไขถั่วเหลืองธรรมชาติ มอบเปลวไฟนิ่งและกลิ่นลาเวนเดอร์อุ่นๆ สบายอารมณ์ในยามค่ำคืน"
+  },
+  {
+    "id": "candle-romance-std",
+    "name": "เทียนหอม Romance",
+    "mood": "romance",
+    "type": "candle",
+    "size": "Standard",
+    "price": 149,
+    "image": "images/romance.jpg",
+    "description": "จุดประกายความละมุนด้วยเทียนหอมกลิ่นกุหลาบวานิลลา สร้างมวลความสุขและบรรยากาศอันแสนพิเศษ"
+  }
+]

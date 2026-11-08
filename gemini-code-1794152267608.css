@@ -1,0 +1,332 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Typography Imports (Google Fonts)
+   Cormorant Garamond: Elegant Serif for luxury headings
+   Plus Jakarta Sans & Sarabun: Clean Modern Sans-serif for body
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Sarabun:wght@300;400;500&display=swap');
+
+/* ==========================================================================
+   Design Tokens & Color Palette
+   ========================================================================== */
+:root {
+  /* Neutral / Luxury Base */
+  --color-bg: #FAF8F5;          /* Off-white warm cream */
+  --color-surface: #FFFFFF;     /* Pure white for raised cards */
+  --color-surface-subtle: #F3EFEA; /* Light beige tint */
+  --color-border: #E8E2D9;      /* Delicate beige line */
+  --color-border-dark: #2C2825; /* Thin charcoal border */
+  
+  /* Text */
+  --color-text-main: #24211E;   /* Deep charcoal */
+  --color-text-muted: #7A746E;  /* Warm muted gray */
+  --color-text-light: #A39D95;  /* Subtle caption tone */
+
+  /* Metallic Accent */
+  --color-accent-gold: #C2A676; /* Soft bronze/gold */
+  --color-accent-gold-hover: #A88D5D;
+
+  /* Subtle Mood Accents (Touch points only) */
+  --mood-fresh: #98B8A6;        /* Soft mint sage */
+  --mood-relax: #B4A7D6;        /* Subtle lavender tint */
+  --mood-focus: #9EB0C2;        /* Slate gray-blue */
+  --mood-romance: #D9A8A0;      /* Gentle peach blush */
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', 'Sarabun', sans-serif;
+
+  /* Spacing Scale (Airy & Editorial) */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2.5rem;
+  --spacing-xl: 4.5rem;
+  --spacing-xxl: 7.5rem;
+
+  /* Transitions */
+  --transition-smooth: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ==========================================================================
+   CSS Reset & Base Setup
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+/* ==========================================================================
+   Typography Styles
+   ========================================================================== */
+h1, h2, h3, .brand-title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--color-text-main);
+}
+
+h1 {
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  line-height: 1.35;
+}
+
+.sub-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--color-accent-gold);
+  margin-bottom: var(--spacing-xs);
+  display: block;
+}
+
+p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  max-width: 60ch;
+}
+
+/* ==========================================================================
+   Layout Containers & Grid
+   ========================================================================== */
+.container {
+  width: 90%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-sm);
+  padding-right: var(--spacing-sm);
+}
+
+.section {
+  padding-top: var(--spacing-xl);
+  padding-bottom: var(--spacing-xl);
+}
+
+/* ==========================================================================
+   Buttons & Interactive Elements
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 2rem;
+  font-family: var(--font-sans);
+  font-size: 0.825rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 0;
+  cursor: pointer;
+  background: transparent;
+  transition: var(--transition-smooth);
+}
+
+/* Primary Outline Button (Minimal Charcoal) */
+.btn-primary {
+  border: 1px solid var(--color-border-dark);
+  color: var(--color-text-main);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-border-dark);
+  color: #FFFFFF;
+}
+
+/* Secondary Gold Accent Outline */
+.btn-accent {
+  border: 1px solid var(--color-accent-gold);
+  color: var(--color-accent-gold);
+}
+
+.btn-accent:hover {
+  background-color: var(--color-accent-gold);
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   Product Cards & Mood Indicators (Subtle Minimalist Accent)
+   ========================================================================== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-lg) var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.product-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.product-card:hover {
+  border-color: var(--color-accent-gold);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(44, 40, 37, 0.04);
+}
+
+.product-image-wrapper {
+  background-color: var(--color-surface-subtle);
+  aspect-ratio: 1 / 1.15;
+  overflow: hidden;
+  margin-bottom: var(--spacing-md);
+  position: relative;
+}
+
+.product-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.product-card:hover .product-image-wrapper img {
+  transform: scale(1.03);
+}
+
+/* Mood Indicators: เฉพาะจุดเล็กๆ เช่น เส้นใต้หัวข้อ หรือ Dot สัญลักษณ์ */
+.mood-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.product-card[data-mood="fresh"] .mood-dot,
+.mood-tag.fresh { background-color: var(--mood-fresh); }
+
+.product-card[data-mood="relax"] .mood-dot,
+.mood-tag.relax { background-color: var(--mood-relax); }
+
+.product-card[data-mood="focus"] .mood-dot,
+.mood-tag.focus { background-color: var(--mood-focus); }
+
+.product-card[data-mood="romance"] .mood-dot,
+.mood-tag.romance { background-color: var(--mood-romance); }
+
+/* Mood Line Accent: เส้นตกแต่งบางๆ 1px ใต้ป้ายบอกกลิ่น */
+.mood-line {
+  height: 1px;
+  width: 28px;
+  margin: var(--spacing-xs) 0;
+}
+.fresh .mood-line { background-color: var(--mood-fresh); }
+.relax .mood-line { background-color: var(--mood-relax); }
+.focus .mood-line { background-color: var(--mood-focus); }
+.romance .mood-line { background-color: var(--mood-romance); }
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-name {
+  font-size: 1.15rem;
+  margin-bottom: 0.25rem;
+}
+
+.product-size {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-xs);
+}
+
+.product-desc {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.6;
+}
+
+.product-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--color-border);
+}
+
+.product-price {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 768px) {
+  :root {
+    --spacing-xl: 3.25rem;
+    --spacing-xxl: 4.5rem;
+  }
+
+  .container {
+    width: 92%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    width: 100%;
+  }
+}

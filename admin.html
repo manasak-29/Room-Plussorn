@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ระบบจัดการรายการสั่งซื้อ | Room Plussorn</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      margin-top: var(--spacing-lg);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+    thead {
+      background-color: var(--color-surface-subtle);
+      border-bottom: 1px solid var(--color-border);
+    }
+    th {
+      font-family: var(--font-sans);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--color-text-main);
+      padding: 1.1rem 1rem;
+      font-size: 0.825rem;
+      text-transform: uppercase;
+    }
+    td {
+      padding: 1.1rem 1rem;
+      border-bottom: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      vertical-align: top;
+      white-space: normal;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    tbody tr:hover {
+      background-color: rgba(243, 239, 234, 0.4);
+    }
+    .admin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: var(--spacing-md);
+    }
+  </style>
+</head>
+<body>
+
+  <main class="section">
+    <div class="container">
+      <!-- Admin Page Title -->
+      <header class="admin-header">
+        <div>
+          <span class="sub-title">Admin Management</span>
+          <h2>รายการสั่งซื้อทั้งหมด</h2>
+          <p style="margin-top: 0.25rem;">ภาพรวมคำสั่งซื้อผลิตภัณฑ์ Room Plussorn จากลูกค้า</p>
+        </div>
+        <div>
+          <a href="index.html" class="btn btn-accent" style="padding: 0.6rem 1.25rem; font-size: 0.75rem;">
+            ไปยังหน้าร้าน
+          </a>
+        </div>
+      </header>
+
+      <!-- Orders Data Table -->
+      <div class="table-container">
+        <table id="ordersTable">
+          <thead>
+            <tr>
+              <th style="min-width: 150px;">วันเวลา</th>
+              <th style="min-width: 160px;">ชื่อลูกค้า</th>
+              <th style="min-width: 150px;">เบอร์โทร/Line</th>
+              <th style="min-width: 240px;">รายการสินค้า</th>
+              <th style="min-width: 130px; text-align: right;">จำนวนเงินรวม</th>
+              <th style="min-width: 200px;">หมายเหตุ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- ให้ script.js ทำการ generate แถวตาราง (<tr>...</tr>) ใส่ในนี้ -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

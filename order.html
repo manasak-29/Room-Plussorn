@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>สั่งซื้อสินค้า | Room Plussorn</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* สไตล์เฉพาะส่วนฟอร์มสั่งซื้อ เพื่อความเรียบหรูและโปร่งสบาย */
+    .order-wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      padding: var(--spacing-lg);
+    }
+    .form-group {
+      margin-bottom: var(--spacing-md);
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .form-label {
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--color-text-main);
+      font-weight: 500;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: var(--color-text-main);
+      background-color: var(--color-bg);
+      border: 1px solid var(--color-border);
+      outline: none;
+      transition: var(--transition-smooth);
+    }
+    .form-control:focus {
+      border-color: var(--color-accent-gold);
+      background-color: #FFFFFF;
+    }
+    .form-control[readonly] {
+      background-color: var(--color-surface-subtle);
+      color: var(--color-text-muted);
+      cursor: default;
+    }
+    textarea.form-control {
+      resize: vertical;
+      min-height: 90px;
+    }
+    .order-summary-box {
+      border-top: 1px solid var(--color-border);
+      padding-top: var(--spacing-md);
+      margin-top: var(--spacing-md);
+    }
+    .form-submit-btn {
+      width: 100%;
+      margin-top: var(--spacing-md);
+      padding: 1rem;
+    }
+    @media (max-width: 768px) {
+      .order-wrapper {
+        padding: var(--spacing-md);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation / Header -->
+  <header class="section" style="padding-bottom: var(--spacing-sm); text-align: center;">
+    <div class="container">
+      <a href="index.html" class="brand-title" style="font-size: 1.8rem; letter-spacing: 0.15em;">ROOM PLUSSORN</a>
+      <div class="mood-line" style="margin: 0.75rem auto 0; background-color: var(--color-accent-gold);"></div>
+    </div>
+  </header>
+
+  <!-- Order Section -->
+  <main class="section">
+    <div class="container">
+      <div class="order-wrapper">
+        <header style="text-align: center; margin-bottom: var(--spacing-lg);">
+          <span class="sub-title">Order Placement</span>
+          <h2>ยืนยันรายการสั่งซื้อ</h2>
+          <p style="margin: 0.5rem auto 0; font-size: 0.875rem;">กรุณากรอกข้อมูลการจัดส่งเพื่อให้เจ้าหน้าที่ดำเนินการจัดส่งอย่างประณีต</p>
+        </header>
+
+        <form id="orderForm">
+          <!-- ข้อมูลลูกค้า -->
+          <div class="form-group">
+            <label for="customerName" class="form-label">ชื่อ - นามสกุล ผู้รับ</label>
+            <input type="text" id="customerName" name="customerName" class="form-control" placeholder="ระบุชื่อจริงและนามสกุล" required>
+          </div>
+
+          <div class="form-group">
+            <label for="contact" class="form-label">เบอร์โทรศัพท์ / LINE ID</label>
+            <input type="text" id="contact" name="contact" class="form-control" placeholder="เช่น 081-xxx-xxxx หรือ Line ID" required>
+          </div>
+
+          <!-- สรุปรายการสินค้า -->
+          <div class="order-summary-box">
+            <div class="form-group">
+              <label for="items" class="form-label">รายการสินค้าที่เลือก</label>
+              <textarea id="items" name="items" class="form-control" readonly rows="4" placeholder="รายการสินค้าจะแสดงผลอัตโนมัติ"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="total" class="form-label">จำนวนเงินรวมทั้งสิ้น (บาท)</label>
+              <input type="text" id="total" name="total" class="form-control" readonly style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 600; color: var(--color-text-main);">
+            </div>
+          </div>
+
+          <!-- หมายเหตุ -->
+          <div class="form-group">
+            <label for="note" class="form-label">หมายเหตุเพิ่มเติม (ที่อยู่จัดส่ง / ข้อความระบุพิเศษ)</label>
+            <textarea id="note" name="note" class="form-control" placeholder="ระบุที่อยู่จัดส่ง หรือรายละเอียดความต้องการเพิ่มเติม"></textarea>
+          </div>
+
+          <!-- ปุ่มกดยืนยัน -->
+          <button type="submit" class="btn btn-primary form-submit-btn">ยืนยันสั่งซื้อ</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
